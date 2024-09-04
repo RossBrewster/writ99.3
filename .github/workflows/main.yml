@@ -18,11 +18,14 @@ jobs:
       with:
         node-version: '20'  # Adjust this to your Node.js version
 
-    - name: Install dependencies
+    - name: Install server dependencies
       run: npm ci
 
+    - name: Install client dependencies
+      run: cd client && npm ci
+
     - name: Build application
-      run: npm run build  # Adjust if your build command is different
+      run: npm run build
 
     - name: Create deployment package
       run: |
