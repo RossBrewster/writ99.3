@@ -261,7 +261,7 @@ export const Animator: React.FC = () => {
           />
         </div>
         <div>
-          <Label htmlFor="easingStrength">Easing Strength</Label>
+          <Label htmlFor="easingStrength">Easing</Label>
           <Input
             id="easingStrength"
             type="number"
