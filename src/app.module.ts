@@ -24,11 +24,15 @@ import { AuthModule } from './modules/auth/auth.module';
 import { ClassroomModule } from './modules/classroom/classroom.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { createDatabaseConfig } from './config/database.config';
+import { ServeStaticModule } from '@nestjs/serve-static';
 
 
 
 @Module({
   imports: [
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'client'),
+    }),
     ConfigModule.forRoot({
       envFilePath: join(__dirname, '..', '.env'),
       isGlobal: true,
